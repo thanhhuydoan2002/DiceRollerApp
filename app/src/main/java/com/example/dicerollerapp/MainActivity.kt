@@ -10,6 +10,13 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+fun main(){
+    val myFirstDice = Dice()
+    val diceRoll = myFirstDice.roll()
+    println("Your ${myFirstDice} sided dice rolled ${diceRoll}!")
+}
+
+
 class Dice(){
     var sides = 6
 
