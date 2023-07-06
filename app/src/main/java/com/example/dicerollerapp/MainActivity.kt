@@ -9,3 +9,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 }
+
+class Dice(){
+    var sides = 6
+
+    fun roll(): Int{
+        val randomNumber = (1..6).random()
+        return  randomNumber
+    }
+}
