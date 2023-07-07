@@ -3,6 +3,7 @@ package com.example.dicerollerapp
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 /** This activity allows roll dice and view result on the screen **/
@@ -23,6 +24,19 @@ class MainActivity : AppCompatActivity() {
         //Update the result on the screen
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = diceRoll.toString()
+
+        val luckyNumber = 6
+        if (diceRoll == luckyNumber){
+            val toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT)
+            toast.show()
+        }
+        else{
+            val toast = Toast.makeText(this, "You rolled a $diceRoll. Try again!", Toast.LENGTH_SHORT)
+            toast.show()
+            return
+        }
+
+
     }
 }
 class Dice(private val numSides: Int){
