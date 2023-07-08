@@ -54,17 +54,23 @@ class MainActivity : AppCompatActivity() {
         val total = diceRoll + diceRoll2
 
         val luckyNumber = 6
-        if (total == luckyNumber){
-            val toast = Toast.makeText(this, "You win!", Toast.LENGTH_SHORT)
-            toast.show()
+        if(diceRoll == diceRoll2){
+            when(diceRoll){
+                1->Toast.makeText(this, "You have double ones", Toast.LENGTH_SHORT).show()
+                2->Toast.makeText(this, "You have double twos", Toast.LENGTH_SHORT).show()
+                3->Toast.makeText(this, "You have double threes", Toast.LENGTH_SHORT).show()
+                4->Toast.makeText(this, "You have double fours", Toast.LENGTH_SHORT).show()
+                5->Toast.makeText(this, "You have double fives", Toast.LENGTH_SHORT).show()
+                6->Toast.makeText(this, "You have double sixes", Toast.LENGTH_SHORT).show()
+            }
+        }
+        else if (total == luckyNumber){
+            Toast.makeText(this, "You win!", Toast.LENGTH_SHORT).show()
         }
         else{
-            val toast = Toast.makeText(this, "You rolled a $total. Try again!", Toast.LENGTH_SHORT)
-            toast.show()
+            Toast.makeText(this, "You rolled a $total. Try again!", Toast.LENGTH_SHORT).show()
             return
         }
-
-
     }
 }
 class Dice(private val numSides: Int){
